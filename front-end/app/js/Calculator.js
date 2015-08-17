@@ -43,4 +43,6 @@ Calculator = function()
         var res = sum(numbers, pos)/ numbers.length;
         return res;
     }
+
 };
+
