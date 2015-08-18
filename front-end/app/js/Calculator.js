@@ -4,37 +4,27 @@
 
 Calculator = function()
 {
-    var numbers = arguments;
-    //Console.log(numbers);
-    var pos = numbers.length - 1;
+
     var my = this;
 
-    this.operations = function()
+    this.calculateOperations = function()
     {
-        console.log("la suma es: "+ my.sum(numbers, pos));
-        console.log("El promedio es: "+ my.prom(numbers, pos));
-        console.log("El maximo es: "+ my.max(numbers, pos));
-        console.log("El minimo es: "+ my.min(numbers, pos));
+        //var numbers = arguments;
+        var pos = arguments.length - 1;
+        if(arguments.length == 0)
+        {
+            throw  "Cannot do the evaluation with numbers";
+        }
+        console.log('This sum is: ', this.obtenerSuma(arguments));
+        console.log('The max is : ', this.obtenerMaximo(arguments));
+        console.log('This sum is: ', this.sum(arguments));
     };
-    this.getPlus = function()
-    {
-        return my.sum(numbers, pos);
-    };
-    this.getAverage = function()
-    {
-        return my.prom(numbers, pos);
-    };
-    this.getMax = function()
-    {
-        return my.max(numbers, pos);
-    };
-    this.getMin = function()
-    {
-        return my.min(numbers, pos);
-    };
-
     this.sum = function(numbers, pos)
     {
+        if(pos === undefined)
+        {
+            pos = numbers.length - 1;
+        }
         var res = numbers[pos];
         if(pos != 0)
         {
@@ -42,6 +32,7 @@ Calculator = function()
         }
         return res;
     };
+
     this.max = function(numbers, pos)
     {
         var res = numbers[pos];
@@ -69,6 +60,43 @@ Calculator = function()
     this.prom = function (numbers, pos) {
         var res = my.sum(numbers, pos)/ numbers.length;
         return res;
+    };
+    this.obtenerSuma = function(numbers, pos)
+    {
+        console.log('ar: ', arguments.length);
+        if((arguments.length) <= 2)
+        {
+            if (pos === undefined) {
+                pos = numbers.length - 1;
+            }
+            if (pos == 0)
+                return numbers[pos];
+            return numbers[pos] + my.obtenerSuma(numbers, pos - 1);
+        }
+        else {
+            var numbers = arguments;
+            if (pos === undefined) {
+                pos = numbers.length - 1;
+            }
+            if (pos == 0)
+                return numbers[pos];
+            return numbers[pos] + my.obtenerSuma(numbers, pos - 1);
+        }
+    };
+    this.obtenerMaximo = function(numbers, pos, max)
+    {
+        if(pos === undefined)
+        {
+            pos = numbers.length - 1;
+        }
+        if(max === undefined || numbers[pos] > max)
+        {
+            max = numbers[pos];
+        }
+        if(pos == 0)
+            return max;
+        else
+            return this.obtenerMaximo(numbers, pos -1, max);
     };
 };
 

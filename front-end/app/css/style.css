@@ -1,7 +1,7 @@
 body{
     background-attachment: fixed;
     background-size: 200px 200px;
-    background-color: #DDD;
+    background: linear-gradient( 80deg, #66CDAA, #F0FFFF);
 }
 header{
     border: 1px;
@@ -10,7 +10,7 @@ header{
     margin: 0 auto;
     margin-bottom: 1%;
     text-align: center;
-    /*background-image: -moz-radial-gradient(45deg, white, #7FA5AE);*/
+    background: linear-gradient( 80deg, #66CDAA, #F0FFFF);
 }
 header > h1{
     text-align: left;
@@ -22,12 +22,12 @@ footer{
     margin-bottom: 1%;
     height: 150px;
     clear: both;
-    /*background-image: -moz-radial-gradient(45deg, white, #7FA5AE);*/
+    background: linear-gradient( 80deg, #66CDAA, #F0FFFF);
 }
 section{
     border: 1px;
     width: 98%;
     margin: 0 auto;
     margin-bottom: 1%;
-    /*background-image: -moz-radial-gradient(45deg, white, #7FA5AE);*/
+    background: linear-gradient( 80deg, #66CDAA, #F0FFFF);
 }
