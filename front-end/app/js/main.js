@@ -42,12 +42,3 @@ var calculateAge = function(bornYear){
   var age =  2015 - bornYear;
   return age;
   */
-
-operations = function(){
-
-
-
-    this.max = function(){
-
-    };
-};
