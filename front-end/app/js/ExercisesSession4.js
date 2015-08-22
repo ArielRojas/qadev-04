@@ -13,7 +13,7 @@ var capicua = function(min, max)
         }
     }
     return i;
-}
+};
 var reverse = function(cap)
 {
     var res;
@@ -25,7 +25,7 @@ var reverse = function(cap)
         cap = parseInt(cap / 10);
     }
     return inv;
-}
+};
 
 var getFirstCapicua = function(offset, limit)
 {
@@ -37,12 +37,12 @@ var getFirstCapicua = function(offset, limit)
         }
     }
     return i;
-}
+};
 var isCapicua = function(number)
 {
     var revNumber = parseInt(number.toString().split('').reverse().join(''));
     return number == revNumber;
-}
+};
 var nNumbersOdd = function(nNumbers) {
     var res;
     var i = 1;
@@ -58,7 +58,7 @@ var nNumbersOdd = function(nNumbers) {
             n++;
         }
     }
-}
+};
 var nNumbersEven = function(nNumbers) {
     var res;
     var i = 1;
@@ -74,4 +74,15 @@ var nNumbersEven = function(nNumbers) {
             n++;
         }
     }
-}
+};
+
+var getFactorial = function(number) {
+
+    var factorial = 1;
+
+    for(var i = 1; i <= number; i++) {
+        factorial *= i;
+    };
+
+    return factorial;
+};

@@ -4,7 +4,6 @@
 
 Calculator = function()
 {
-
     var my = this;
 
     this.calculateOperations = function()
@@ -15,9 +14,10 @@ Calculator = function()
         {
             throw  "Cannot do the evaluation with numbers";
         }
-        console.log('This sum is: ', this.obtenerSuma(arguments));
-        console.log('The max is : ', this.obtenerMaximo(arguments));
-        console.log('This sum is: ', this.sum(arguments));
+        console.log('This sum is: ', this.calculatePlus(arguments));
+        console.log('The max is : ', this.calculateMaximum(arguments));
+        console.log('The max is : ', this.calculateMinimum(arguments));
+        console.log('The max is : ', this.calculateAverage(arguments));
     };
     this.sum = function(numbers, pos)
     {
@@ -61,29 +61,56 @@ Calculator = function()
         var res = my.sum(numbers, pos)/ numbers.length;
         return res;
     };
-    this.obtenerSuma = function(numbers, pos)
+
+    /*
+    Session 2 Practice
+    *
+    * */
+
+    this.calculatePlus = function()
     {
-        console.log('ar: ', arguments.length);
-        if((arguments.length) <= 2)
-        {
-            if (pos === undefined) {
-                pos = numbers.length - 1;
-            }
-            if (pos == 0)
-                return numbers[pos];
-            return numbers[pos] + my.obtenerSuma(numbers, pos - 1);
-        }
-        else {
-            var numbers = arguments;
-            if (pos === undefined) {
-                pos = numbers.length - 1;
-            }
-            if (pos == 0)
-                return numbers[pos];
-            return numbers[pos] + my.obtenerSuma(numbers, pos - 1);
-        }
+        if (typeof arguments[0] == 'object')
+            return this.getPlus(arguments[0]);
+        return this.getPlus(arguments);
     };
-    this.obtenerMaximo = function(numbers, pos, max)
+
+    this.calculateMaximum = function()
+    {
+        if (typeof arguments[0] == 'object')
+            return this.getMaximum(arguments[0]);
+        return this.getMaximum(arguments);
+    };
+
+    this.calculateMinimum = function()
+    {
+        if (typeof arguments[0] == 'object')
+            return this.getMinimum(arguments[0]);
+        return this.getMinimum(arguments);
+    };
+
+    this.calculateAverage = function()
+    {
+        if (typeof arguments[0] == 'object')
+            return this.getAverage(arguments[0]);
+        return this.getAverage(arguments);
+    };
+
+    this.getPlus = function(numbers, pos)
+    {
+        if (pos === undefined) {
+            pos = numbers.length - 1;
+        }
+        if (pos == 0)
+            return numbers[pos];
+        return numbers[pos] + this.getPlus(numbers, pos - 1);
+    };
+
+    this.getAverage = function (numbers, pos) {
+        var res = this.getPlus(numbers, pos)/ numbers.length;
+        return res;
+    };
+
+    this.getMaximum = function(numbers, pos, max)
     {
         if(pos === undefined)
         {
@@ -96,7 +123,22 @@ Calculator = function()
         if(pos == 0)
             return max;
         else
-            return this.obtenerMaximo(numbers, pos -1, max);
+            return this.getMaximum(numbers, pos -1, max);
+    };
+    this.getMinimum = function(numbers, pos, min)
+    {
+        if(pos === undefined)
+        {
+            pos = numbers.length - 1;
+        }
+        if(min === undefined || numbers[pos] < min)
+        {
+            min = numbers[pos];
+        }
+        if(pos == 0)
+            return min;
+        else
+            return this.getMinimum(numbers, pos -1, min);
     };
 };
 
