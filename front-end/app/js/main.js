@@ -40,7 +40,7 @@ hugo = new person('Hugo', 13);
 var calculateAge = function(bornYear){
     age =  2015 - bornYear;
     return age;
-}
+};
  /*
   var age = '';
   var calculateAge = function(bornYear){

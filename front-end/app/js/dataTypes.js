@@ -18,8 +18,7 @@ var countWords = function(par){
  Today is : Friday.
  Current time is : 4 PM : 50 : 22
  */
-var displayDate = function()
-{
+var displayDate = function() {
     var now = new Date();
     //var day1 = new Date(day);
     //var date1 = new Date(hours, minutes, seconds);
