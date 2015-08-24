@@ -67,7 +67,7 @@ var nNumbersEven = function(nNumbers) {
             continue check;
         }
         else {
-            console.log("value: " + n);
+            console.log('value: ' + n);
             i++;
             n++;
         }
@@ -88,11 +88,75 @@ var nNumbersOdd = function(nNumbers) {
             continue check;
         }
         else {
-            console.log("value: " + n);
+            console.log('value: ' + n);
             i++;
             n++;
         }
     }
+};
+/**
+ *
+ * @param number
+ * @returns {boolean}
+ */
+var isOddNumber = function(number){
+    return number % 2 !=0;
+};
+/**
+ *
+ * @param n
+ * @returns {Array}
+ */
+var getEventNumbers = function(n){
+    var evenNumbers = [];
+    for(var i = 0; i < n*2 ; i++){
+        if(isOddNumber(i)) {
+            continue;
+        }
+        evenNumbers.push(i);
+    }
+    return evenNumbers;
+};
+/**
+ * reverse string
+ * @param {string} str
+ * @returns {string}
+ */
+var reverseString = function(str){
+    var reverse = '';
+    var pos = str.length-1;
+    for(var i = 0; i< str.length; i++){
+        reverse = reverse.concat(str[pos]);
+        pos--;
+    }
+    return reverse;
+};
+/**
+ *
+ * @param {String} str
+ * @returns {string}
+ */
+var reverseStringT = function(str) {
+    var revString = '';
+    for(var i = str.length - 1; i>=0; i-- ){
+        revString +=str[i];
+    };
+    return revString;
+};
+/**
+ *
+ * @param {String} str
+ * @param {Number} qty
+ * @returns {string}
+ */
+var truncateLogWord = function(str,qty){
+    var pos = 0;
+    var truncate = '';
+    while(pos < qty){
+        truncate = truncate.concat(str[pos]);
+        pos++;
+    };
+    return truncate;
 };
 
 /**
