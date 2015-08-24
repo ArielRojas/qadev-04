@@ -6,6 +6,9 @@ Calculator = function()
 {
     var my = this;
 
+    /**
+     * This function performs all operations . (sum , maximum , minimum and average )
+     */
     this.calculateOperations = function()
     {
         //var numbers = arguments;
@@ -67,6 +70,9 @@ Calculator = function()
     *
     * */
 
+    /**
+     * Calculate the sum with recursion.
+     */
     this.calculatePlus = function()
     {
         if (typeof arguments[0] == 'object')
@@ -74,6 +80,9 @@ Calculator = function()
         return this.getPlus(arguments);
     };
 
+    /**
+     * Calculate maximum value with recursion
+     */
     this.calculateMaximum = function()
     {
         if (typeof arguments[0] == 'object')
@@ -81,6 +90,9 @@ Calculator = function()
         return this.getMaximum(arguments);
     };
 
+    /**
+     * Calculate minimum value with recursion
+     */
     this.calculateMinimum = function()
     {
         if (typeof arguments[0] == 'object')
@@ -88,6 +100,9 @@ Calculator = function()
         return this.getMinimum(arguments);
     };
 
+    /**
+     * Calculate the average with recursion
+     */
     this.calculateAverage = function()
     {
         if (typeof arguments[0] == 'object')
@@ -95,6 +110,12 @@ Calculator = function()
         return this.getAverage(arguments);
     };
 
+    /**
+     * get pluss of numbers
+     * @param numbers
+     * @param pos
+     * @returns {*}
+     */
     this.getPlus = function(numbers, pos)
     {
         if (pos === undefined) {
@@ -105,11 +126,24 @@ Calculator = function()
         return numbers[pos] + this.getPlus(numbers, pos - 1);
     };
 
+    /**
+     * get average of numbers
+     * @param numbers
+     * @param pos
+     * @returns {number}
+     */
     this.getAverage = function (numbers, pos) {
         var res = this.getPlus(numbers, pos)/ numbers.length;
         return res;
     };
 
+    /**
+     * get maximum value
+     * @param numbers
+     * @param pos
+     * @param max
+     * @returns {*}
+     */
     this.getMaximum = function(numbers, pos, max)
     {
         if(pos === undefined)
@@ -125,6 +159,14 @@ Calculator = function()
         else
             return this.getMaximum(numbers, pos -1, max);
     };
+
+    /**
+     * get minimum value
+     * @param numbers
+     * @param pos
+     * @param min
+     * @returns {*}
+     */
     this.getMinimum = function(numbers, pos, min)
     {
         if(pos === undefined)

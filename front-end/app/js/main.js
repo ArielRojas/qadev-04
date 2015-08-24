@@ -3,8 +3,9 @@
  */
 console.log('This is a JS code from a JS File');
 
-/*
-*Documentation...
+/**
+ * say hello
+ * @param name
  */
 var sayHello = function (name) {
     var helloStr = 'Hello ' + name + '!';
@@ -18,7 +19,6 @@ sayHello('Ariel');
  * @param name
  * @param age
  */
-
 person = function(name, age){
     this.name = name;
     this.age = age;
@@ -32,6 +32,11 @@ paco = new person('Paco', 12);
 hugo = new person('Hugo', 13);
 
 //var age = '';
+/**
+ * calculate age
+ * @param bornYear
+ * @returns {number|*}
+ */
 var calculateAge = function(bornYear){
     age =  2015 - bornYear;
     return age;

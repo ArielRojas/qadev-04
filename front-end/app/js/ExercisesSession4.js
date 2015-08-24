@@ -2,6 +2,12 @@
  * Created by ArielWagner on 21/08/2015.
  */
 
+/**
+ * Calculate the capicua values between a value maximum and minimum
+ * @param min
+ * @param max
+ * @returns {*}
+ */
 var capicua = function(min, max)
 {
     for(i = min; i<= max; i= i+1)
@@ -14,6 +20,12 @@ var capicua = function(min, max)
     }
     return i;
 };
+
+/**
+ * Calculate the value reverse
+ * @param cap
+ * @returns {number}
+ */
 var reverse = function(cap)
 {
     var res;
@@ -27,6 +39,12 @@ var reverse = function(cap)
     return inv;
 };
 
+/**
+ * Calculate the capicua values between a value maximum and minimum
+ * @param offset
+ * @param limit
+ * @returns {*}
+ */
 var getFirstCapicua = function(offset, limit)
 {
     for(i= offset; i<= limit; i++)
@@ -43,7 +61,12 @@ var isCapicua = function(number)
     var revNumber = parseInt(number.toString().split('').reverse().join(''));
     return number == revNumber;
 };
-var nNumbersOdd = function(nNumbers) {
+
+/**
+ *Calculate  N even numbers
+ * @param nNumbers
+ */
+var nNumbersEven = function(nNumbers) {
     var res;
     var i = 1;
     var n = 1;
@@ -59,7 +82,12 @@ var nNumbersOdd = function(nNumbers) {
         }
     }
 };
-var nNumbersEven = function(nNumbers) {
+
+/**
+ * Calculate  N odd numbers
+ * @param nNumbers
+ */
+var nNumbersOdd = function(nNumbers) {
     var res;
     var i = 1;
     var n = 1;
@@ -76,6 +104,11 @@ var nNumbersEven = function(nNumbers) {
     }
 };
 
+/**
+ * Calculate the factorial of number
+ * @param number
+ * @returns {number}
+ */
 var getFactorial = function(number) {
 
     var factorial = 1;
