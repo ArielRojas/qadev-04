@@ -19,7 +19,7 @@ Game.prototype.start = function(){
 
 Game.prototype.createPlayers = function(){
     //TODO: Number of shots should be retrieved from a constant
-    var numPlayers = 10;
+    var numPlayers = 1;
     for(var i = 0; i< numPlayers; i++){
         var player = new Player('Player' + i);
         this.players.push(player);
