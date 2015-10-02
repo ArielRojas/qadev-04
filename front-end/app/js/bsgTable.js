@@ -55,8 +55,21 @@ var attachListeners = function(){
  * @param newT
  */
 var changeText = function(newText) {
-    $('td').on('click', function(){
-        console.log('change text', arguments);
+    $('td').on('click', function(event){
+        console.log('change text', event.target);
         $(this).text(newText);
+        $(this)[0].style['background-color'] = 'red';
+        $(this).off('click');
+        $(this).off('mouseout');
+        $(this).off('mouseover');
+    });
+    $('td').on('mouseover',function(e) {
+        console.log('On mouseover');
+        $(this)[0].style['background-color'] = 'yellow';
+    });
+    $('td').on('On mouseout', function(e) {
+        console.log('mouseout');
+        $(this)[0].style['background-color'] = '#009926';
+        //$(this).css('background-color', '#FFEC9E');
     });
 };
